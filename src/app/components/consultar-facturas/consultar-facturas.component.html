@@ -1,0 +1,49 @@
+<div class="card">
+    <h5 class="card-header">Consultar Factura</h5>
+    <div class="card-body">
+<form  [formGroup]="signupForm" >
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                    <p class="card-text">Por favor ingrese el documento de la persona y presione en consultar</p>
+                <label for="doc">Documento:</label>
+                <input  formControlName="doc" [(ngModel)]="posts.userDoc"  name="doc" type="number" class="form-control"
+                 id="doc" placeholder="Documento">
+            </div>
+              </div>
+          <button [disabled]="signupForm.invalid" (click)="Consultar();"  class="btn btn-primary">Consultar</button>
+</form>
+<br>
+<br>
+<div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+        {{errorMsg}}
+</div>
+<div *ngIf="mostrarTabla">
+<table class="table table-hover" >
+    <thead>
+        <th>Numero De Factura</th>
+        <th>Fecha De Emision</th>
+        <th>Valor De Factura</th>
+        <th>Nombre Cliente</th>
+        <th>Apellido Cliente</th>
+        <th>Cedula Cliente</th>
+        <th>Numero De Linea</th>
+        <th>Opcion</th>
+    </thead>
+    <tr *ngFor="let datos of post">
+        <td>{{datos[0]}}</td>
+        <td>{{datos[1]}}</td>
+        <td>{{datos[2]}}</td>
+        <td>{{datos[3]}}</td>
+        <td>{{datos[4]}}</td>
+        <td>{{datos[5]}}</td>
+        <td>{{datos[6]}}</td>
+        <td><button (click)="Eliminar(datos[0]);" class="btn btn-danger">Eliminar</button></td>
+
+    </tr>
+
+</table>
+</div>
+</div>
+</div>
+
+

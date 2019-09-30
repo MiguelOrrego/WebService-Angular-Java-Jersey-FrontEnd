@@ -1,0 +1,49 @@
+<div class="card">
+        <h5 class="card-header">Consultar Estado De Lineas Por Persona</h5>
+        <div class="card-body">
+    <form [formGroup]="signupForm">
+                <div class="form-row">
+                <p class="card-text">Por favor ingrese el documento e linea telefonica para consultar el estado de la linea</p>
+                        
+                  <div class="form-group col-md-6">
+                        <br> 
+                    <label for="doc">Documento:</label>
+                    <input formControlName="doc"  [(ngModel)]="datoslinea.percedula" name="doc" type="number" class="form-control" id="doc" placeholder="Documento" >
+                  </div>
+                  <div class="form-group col-md-6">
+                        <br>
+                        <label for="numlinea">Numero Linea Telefonica:</label>
+                        <input formControlName="numlinea"  [(ngModel)]="datoslinea.linumerolinea" name="numlinea" type="number" class="form-control" id="numlinea" placeholder="Numero Linea Telefonica" >
+                      </div>
+                      <button [disabled]="signupForm.invalid"  (click)="validacionPersona();" type="submit" class="btn btn-primary">Consultar</button>
+    </div>
+    </form>
+
+    <br>
+    <br>
+    <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+            {{errorMsg}}
+    </div>
+    <table class="table table-hover" *ngIf="mostrarTabla">
+        <thead>
+            <th>Numero De Linea</th>
+            <th>Estado Linea</th>
+            <th>Valor Plan</th>
+            <th>Cedula Cliente</th>
+            <th>Nombre Cliente</th>
+            <th>Apellido Cliente</th>
+        </thead>
+        <tr *ngFor="let datos of datoLinea">
+            <td>{{datos[0]}}</td>
+            <td>{{datos[1]}}</td>
+            <td>{{datos[2]}}</td>
+            <td>{{datos[3]}}</td>
+            <td>{{datos[4]}}</td>
+            <td>{{datos[5]}}</td>
+    
+        </tr>
+    
+    </table>
+    </div>
+    </div>
+

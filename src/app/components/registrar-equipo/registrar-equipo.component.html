@@ -1,0 +1,47 @@
+<div class="card">
+        <h5 class="card-header">Registro De Equipo</h5>
+        <div class="card-body">
+                <form [formGroup]="signupForm">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="serquipo">Serial Del Equipo:</label>
+                    <input formControlName="serquipo" [(ngModel)]="equipo.equserial" name="serquipo" type="number" class="form-control" id="serquipo" placeholder="Serial Del Equipo" >
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="numlinea">Numero De Linea:</label>
+                    <input formControlName="numlinea" type="number" name="numlinea" [(ngModel)]="equipo.linumerolinea" class="form-control"   placeholder="Numero De Linea" id="numlinea">
+                  </div>
+                </div>
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="marca">Marca Del Equipo:</label>
+                <input formControlName="marca" [(ngModel)]="equipo.equmarca" name="marca" type="text" class="form-control" id="marca" placeholder="Marca Del Equipo" >
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="descripcion">Descripcion Del Equipo:</label>
+                  <input formControlName="descripcion" [(ngModel)]="equipo.equdescripcion" name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Descripcion Del Equipo" >
+                </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="estado">Estado Equipo:</label>
+                    <select  formControlName="estado" name="estado" [(ngModel)]="equipo.equestado" class="form-control" >
+                      <option disabled>Seleccione</option>
+                      <option value="Reportado">Reportado</option>
+                      <option value="No Reportado">No Reportado</option>
+                    </select>
+                  </div>
+                  </div>
+             
+           
+              <button [disabled]="signupForm.invalid" (click)="ConsultarYGuardarEquipo();" type="submit" class="btn btn-primary">Registrar Equipo</button>
+            </form>
+            <br>
+            <br>
+            <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+                {{errorMsg}}
+            </div>
+        </div>
+        </div>
+        

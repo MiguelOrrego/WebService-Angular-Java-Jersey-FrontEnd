@@ -1,0 +1,71 @@
+<div class="card">
+        <h5 class="card-header">Actualizar Estado De Linea Telefonica</h5>
+        <div class="card-body">
+    <form [formGroup]="signupForm" >
+            <p class="card-text">Por favor ingrese los datos para actualizar la linea telefonica</p>
+
+                <div class="form-row"> 
+                  <div class="form-group col-md-6">
+                        <br> 
+                    <label for="doc">Documento:</label>
+                    <input formControlName="doc" [(ngModel)]="datoslinea.percedula" name="doc" type="number" class="form-control" id="doc" placeholder="Documento" >
+                  </div>
+                  <div class="form-group col-md-6">
+                        <br>
+                        <label for="numlinea">Numero Linea Telefonica:</label>
+                        <input formControlName="numlinea" [(ngModel)]="datoslinea.linumerolinea" name="numlinea" type="number" class="form-control" id="doc" placeholder="Numero Linea Telefonica" >
+                      </div>
+
+                  </div>
+
+                  <div class="form-row">       
+                  <div class="form-group col-md-6">
+                        <label for="estado">Estado</label>
+                        <select formControlName="estado"   name="linestado" [(ngModel)]="datoslinea.linestado" class="form-control">
+                          <option disabled>Seleccione</option>
+                          <option value="activa">Activa</option>
+                          <option value="suspendida">Suspendida</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                            <label for="tipo_plan">Tipo De Plan:</label>
+                            <select  formControlName="tipo_plan" name="tipo_plan" [(ngModel)]="datoslinea.tipo_plan" class="form-control" >
+                              <option disabled>Seleccione</option>
+                              <option value="50000">P1-50000</option>
+                              <option value="80000">P2-80000</option>
+                            </select>
+                          </div>
+                          </div>
+                  
+              <button [disabled]="signupForm.invalid" (click)="validacionPersona();" type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+    <br>
+    <br>
+    <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+            {{errorMsg}}
+    </div>
+    <table class="table table-hover" *ngIf="mostrarTabla">
+        <thead>
+            <th>Numero De Linea</th>
+            <th>Estado Linea</th>
+            <th>Valor Plan</th>
+            <th>Cedula Cliente</th>
+            <th>Nombre Cliente</th>
+            <th>Apellido Cliente</th>
+            <th>Opcion</th>
+        </thead>
+        <tr *ngFor="let datos of datoLinea">
+            <td>{{datos[0]}}</td>
+            <td>{{datos[1]}}</td>
+            <td>{{datos[2]}}</td>
+            <td>{{datos[3]}}</td>
+            <td>{{datos[4]}}</td>
+            <td>{{datos[5]}}</td>
+            <td><button (click)="editar(datos[0],datos[1]);" class="btn btn-success">Editar</button></td>
+    
+        </tr>
+    
+    </table>
+    
+    </div>
+    </div>

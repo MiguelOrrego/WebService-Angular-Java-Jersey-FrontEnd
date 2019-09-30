@@ -1,0 +1,76 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Menu Principal</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+</head>
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><img src="../../../assets/imagenes/telefono-celular (1).png"></div>
+      <div class="list-group list-group-flush">
+        <a routerLink="/RegistrarPersonas"  class="list-group-item list-group-item-action bg-light">Registrar Persona</a>
+        <a routerLink="/RegistroLinea"  class="list-group-item list-group-item-action bg-light">Registrar Linea Telefonica</a>
+        <a routerLink="/RegistrarEquipo"  class="list-group-item list-group-item-action bg-light">Registrar Equipo</a>
+        <a  routerLink="/ActualizarLinea" class="list-group-item list-group-item-action bg-light"><i class="fas fa-apple-alt"></i>
+          Actualizar Linea Telefonica </a>
+        <a routerLink="/ConsultarFacturas" href="#" class="list-group-item list-group-item-action bg-light">Consultar Facturas</a>
+        <a routerLink="/ConsultarLineas"  class="list-group-item list-group-item-action bg-light">Consultar Lineas Por Persona</a>
+
+
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+         
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown">
+                GESTION DE LINEA TELEFONICA
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+      <br>
+        <router-outlet></router-outlet>
+          
+      </div>
+      <footer class="main-footer">
+          <div class="pull-right hidden-xs">
+           <p>&copy; Miguel Angel Orrego Lopez.</p>
+          </div>
+        </footer>
+    </div>
+    <!-- /#page-content-wrapper -->
+  
+  </div>
+</body>
+
+
+
+
+
+  
+   

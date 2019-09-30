@@ -1,0 +1,45 @@
+
+      <div class="card">
+    <h5 class="card-header">Registro De Linea Telefonica</h5>
+    <div class="card-body">
+            <form [formGroup]="signupForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="numeroLinea">Numero De Linea:</label>
+                <input formControlName="numeroLinea" [(ngModel)]="lineatelefonica.linumerolinea" name="linumerolinea" type="number" class="form-control" id="telefono" placeholder="Numero De Linea">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="linestado">Estado:</label>
+                <select formControlName="linestado" name="linestado" [(ngModel)]="lineatelefonica.linestado" class="form-control" >
+                  <option disabled>Seleccione</option>
+                  <option value="activa">Activa</option>
+                  <option value="suspendida">Suspendida</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="tipo_plan">Tipo De Plan:</label>
+                <select formControlName="tipo_plan"  name="tipo_plan" [(ngModel)]="lineatelefonica.tipo_plan" class="form-control" >
+                  <option disabled>Seleccione</option>
+                  <option value="50000">P1-50000</option>
+                  <option value="80000">P2-80000</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="cedula">Documento De La Persona:</label>
+                <input  formControlName="cedula" [(ngModel)]="lineatelefonica.percedula" name="cedula" type="number" class="form-control" id="cedula" placeholder="Numero De Documento" required>
+              </div>
+              </div>
+         
+       
+          <button [disabled]="signupForm.invalid" (click)="ConsultarYGuardarLinea();" type="submit" class="btn btn-primary">Registrar Linea</button>
+        </form>
+        <br>
+        <br>
+        <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+            {{errorMsg}}
+    </div>
+
+  </div>
+</div>
