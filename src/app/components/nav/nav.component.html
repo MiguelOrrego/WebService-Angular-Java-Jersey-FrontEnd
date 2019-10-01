@@ -17,13 +17,15 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading"><img src="../../../assets/imagenes/telefono-celular (1).png"></div>
       <div class="list-group list-group-flush">
-        <a routerLink="/RegistrarPersonas"  class="list-group-item list-group-item-action bg-light">Registrar Persona</a>
-        <a routerLink="/RegistroLinea"  class="list-group-item list-group-item-action bg-light">Registrar Linea Telefonica</a>
-        <a routerLink="/RegistrarEquipo"  class="list-group-item list-group-item-action bg-light">Registrar Equipo</a>
+        <a routerLink="/RegistrarPersonas"  class="list-group-item list-group-item-action bg-light"><fa-icon  [icon]="faUser"></fa-icon>  Registrar Persona</a>
+        <a routerLink="/RegistroLinea"  class="list-group-item list-group-item-action bg-light">                <fa-icon  [icon]="faClipboardCheck"></fa-icon>
+            Registrar Linea Telefonica</a>
+        <a routerLink="/RegistrarEquipo"  class="list-group-item list-group-item-action bg-light"><fa-icon  [icon]="faMobile"></fa-icon>  Registrar Equipo</a>
         <a  routerLink="/ActualizarLinea" class="list-group-item list-group-item-action bg-light"><i class="fas fa-apple-alt"></i>
-          Actualizar Linea Telefonica </a>
-        <a routerLink="/ConsultarFacturas" href="#" class="list-group-item list-group-item-action bg-light">Consultar Facturas</a>
-        <a routerLink="/ConsultarLineas"  class="list-group-item list-group-item-action bg-light">Consultar Lineas Por Persona</a>
+          <fa-icon  [icon]="faEdit"></fa-icon>  Actualizar Linea Telefonica </a>
+         
+        <a routerLink="/ConsultarFacturas" href="#" class="list-group-item list-group-item-action bg-light"><fa-icon  [icon]="faSearch"></fa-icon> Consultar Facturas</a>
+        <a routerLink="/ConsultarLineas"  class="list-group-item list-group-item-action bg-light"><fa-icon  [icon]="faSearch"></fa-icon>  Consultar Lineas Por Persona</a>
 
 
       </div>

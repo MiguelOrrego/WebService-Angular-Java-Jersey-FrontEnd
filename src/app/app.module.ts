@@ -9,7 +9,10 @@ import {ServicesService}   from "../app/services/services.service";
 import { RegistrarPersonasComponent } from './components/registrar-personas/registrar-personas.component';
 import { ConsultarLineasComponent } from './components/consultar-lineas/consultar-lineas.component';
 import { RegistrarEquipoComponent } from './components/registrar-equipo/registrar-equipo.component';
-import { ReactiveFormsModule,FormsModule} from '@angular/forms'
+import { ReactiveFormsModule,FormsModule} from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { ReactiveFormsModule,FormsModule} from '@angular/forms'
     NavComponent,
     RegistrarPersonasComponent,
     ConsultarLineasComponent,
-    RegistrarEquipoComponent
+    RegistrarEquipoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import { ReactiveFormsModule,FormsModule} from '@angular/forms'
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
     
   ],
   providers: [ServicesService],

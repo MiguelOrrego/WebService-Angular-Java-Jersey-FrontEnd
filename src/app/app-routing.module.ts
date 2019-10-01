@@ -7,6 +7,7 @@ import {ActualizarEstadoLineaComponent} from "./components/actualizar-estado-lin
 import {ConsultarLineasComponent} from "./components/consultar-lineas/consultar-lineas.component"
 import {RegistrarEquipoComponent} from "./components/registrar-equipo/registrar-equipo.component"
 import {AppComponent} from "../app/app.component"
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: 'ActualizarLinea', component: ActualizarEstadoLineaComponent },
   { path: 'ConsultarLineas', component: ConsultarLineasComponent },
   { path: 'RegistrarEquipo', component: RegistrarEquipoComponent },
-  { path: 'app', component: AppComponent }
+  { path: 'app', component: AppComponent },
+  { path: 'Home', component: HomeComponent },
+  { path: '**', pathMatch: 'full', redirectTo:'Home'}
 
   
 ];

@@ -3,16 +3,19 @@ import { faUser, faMobile,faClipboardCheck,faEdit,faSearch} from '@fortawesome/f
 
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class NavComponent implements OnInit {
+export class HomeComponent implements OnInit {
+
   faUser=faUser;
   faMobile=faMobile;
   faClipboardCheck=faClipboardCheck;
   faEdit=faEdit;
   faSearch=faSearch;
+
+
   constructor() { }
 
   ngOnInit() {
